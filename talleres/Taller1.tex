@@ -1,0 +1,90 @@
+\documentclass[10pt]{book}
+\usepackage [spanish] {babel}
+\usepackage [T1]{fontenc}
+\usepackage [utf8]{inputenc}
+\usepackage {graphicx}
+\usepackage{color} 
+\usepackage{anysize} 
+\usepackage[bookmarks=true]{hyperref}
+
+\marginsize{2cm}{1cm}{1cm}{2cm}
+
+
+%MY COMMANDS
+\newcommand{\sub}[1]{\mbox{\scriptsize{#1}}}
+\newcommand{\der}[2]{ \frac{ \partial #1 }{\partial #2} }
+\newcommand{\dtot}[2]{ \frac{ d #1 }{d #2} }
+\newcommand{\pr}[1]{ \left( #1 \right) }
+\newcommand{\cor}[1]{ \left[ #1 \right] }
+\newcommand{\lla}[1]{ \left\{ #1 \right\} }
+\newcommand{\eq}[2]{\begin{equation} \label{eq#1} #2 \end{equation}}
+
+
+\begin{document}
+\title{\begin{Huge}
+\textbf{Documentación PLYNET}
+\end{Huge} \\ Python Planetary Physics Package}
+\author{ Sebastian Bustamante \\ \begin{small}
+macsebas33@gmail.com
+\end{small} }
+\maketitle
+
+\newpage{\pagestyle{empty}\cleardoublepage}  
+
+\tableofcontents
+\newpage{\pagestyle{empty}\cleardoublepage}  
+
+\chapter{Introducción}
+
+\chapter{Instalación}
+
+\chapter{Módulos}
+	\section{data.py}
+	\section{mechanic.py}
+	\section{thermal.py}
+	\section{magnetic.py}
+	\section{numeric.py}
+
+\chapter{Propiedades de los materiales}
+	\section{Algunas ecuaciones de estado}
+		\subsection{Ecuación de Vinet}
+		\subsection{Ecuación de BM3}
+		\subsection{Comparaciones}
+	\section{Modelos de viscocidad para el manto}
+		\subsection{Viscosidad constante}
+		\subsection{Reología lineal}
+		\subsection{Modelo Tipo Arrenius}
+		\subsection{Modelo exponencial}
+
+\chapter{Estructura interna}
+	\section{Preliminares en estructura interna mecánica}
+	\section{Ecuaciones de estructura interna}
+	\section{Algunas simplificaciones}
+	\section{Algoritmo para el cálculo}
+	\section{Algunos ejemplos y reproducción de resultados}
+
+\chapter{Evolución térmica}
+	\section{Preliminares en evolución térmica}
+	\section{Modelo de caja}
+		\subsection{Introducción teórica al módelo de caja}
+		\subsection{Algoritmo para el cálculo}
+	\section{Modelo MLT}
+		\subsection{Introducción teórica al módelo MLT}
+		\subsection{Algoritmo para el cálculo}
+	\section{Comparaciones y comentarios}		
+	\section{Algunos ejemplos y reproducción de resultados}
+
+\chapter{Campos magéticos planetarios}
+	\section{Preliminares teoría del dínamo}
+	\section{Ecuación general de balance de entropía}
+	\section{Cálculo usando módelo de caja para la evolución térmica}
+	\section{Cálculo usando módelo MLT para la evolución térmica}
+
+\chapter{Algorítmos numéricos}
+	\section{Algoritmos de integración}
+		\subsection{Runge Kutta 4}
+		\subsection{Euler de primer órden}
+		\subsection{Algorítmos adaptativos específicos}
+	
+\chapter{Bibliografía}
+\end{document}

@@ -1,0 +1,81 @@
+\usepackage [spanish] {babel}
+\usepackage [T1]{fontenc}
+\usepackage [utf8]{inputenc}
+\usepackage {graphicx}
+\usepackage{anysize} 
+\usepackage[bookmarks=true]{hyperref}
+\usepackage{bm} 
+\usepackage{natbib}
+\usepackage{color}
+
+\marginsize{4cm}{3cm}{3cm}{4cm}
+\usepackage{times}
+
+%No indent document
+\setlength\parindent{0pt}
+
+%MY COMMANDS
+\definecolor{gray}{rgb}{0.5,0.5,0.2}
+\newcommand{\colored}[1]{\textcolor{gray}{\bf #1}}
+
+\newcommand{\bds}[1]{\boldsymbol{ #1 }}
+\newcommand{\sub}[1]{\mbox{\scriptsize{#1}}}
+\newcommand{\der}[2]{ \frac{ \partial #1 }{\partial #2} }
+\newcommand{\dtot}[2]{ \frac{ d #1 }{d #2} }
+\newcommand{\pr}[1]{ \left( #1 \right) }
+\newcommand{\cor}[1]{ \left[ #1 \right] }
+\newcommand{\lla}[1]{ \left\{ #1 \right\} }
+\newcommand{\eq}[2]{\begin{equation} \label{#1} #2 \end{equation}}
+
+%CODE COMMANDS============================================================
+\newcommand{\python}{\textit{Python} }
+\newcommand{\ipython}{\textit{iPython} }
+\newcommand{\numpy}{\textit{NumPy} }
+\newcommand{\scipy}{\textit{SciPy} }
+\newcommand{\matplotlib}{\textit{Matplotlib} }
+\newcommand{\mayavi}{\textit{MayaVi2} }
+\newcommand{\tkinter}{\textit{TKinter} }
+
+\usepackage{color}
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+
+\usepackage{listings}
+\lstset{ frame=Ltb,
+framerule=0pt,
+aboveskip=0.5cm,
+framextopmargin=3pt,
+framexbottommargin=3pt,
+framexleftmargin=0.4cm,
+framesep=0pt,
+rulesep=.4pt,
+backgroundcolor=\color{gray97},
+rulesepcolor=\color{black},
+%
+stringstyle=\ttfamily,
+showstringspaces = false,
+basicstyle=\small\ttfamily,
+commentstyle=\color{gray45},
+keywordstyle=\bfseries,
+%
+numbers=left,
+numbersep=15pt,
+numberstyle=\tiny,
+numberfirstline = false,
+breaklines=true,
+}
+
+% minimizar fragmentado de listados
+\lstnewenvironment{listing}[1][]
+{\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
+
+\lstdefinestyle{consola}
+{basicstyle=\scriptsize\bf\ttfamily,
+backgroundcolor=\color{gray75},
+}
+
+\lstdefinestyle{python}
+{language=python,
+}
+%=========================================================================

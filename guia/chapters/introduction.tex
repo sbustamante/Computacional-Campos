@@ -1,0 +1,251 @@
+%#########################################################################
+\chapter{Preliminares}
+\label{cha:prem}
+%#########################################################################
+
+
+%*************************************************************************
+\section{Motivación}
+\label{sec:motiv}
+
+
+La física ha evolucionado hasta un estado actual donde la mayoría de 
+cálculos teóricos necesarios para realizar investigación de frontera 
+requieren de una gran componente computacional. Desde la corroboración 
+entre teoría y experimento, la predicción y control de los resultados de 
+un experimento hecho a posteriori y la recreación de condiciones imposibles 
+de lograr experimentalmente, tales como simulaciones cosmológicas del 
+universo a gran escala o complejos sistemas atómicos. Estos son sólo 
+algunos ejemplos representativos del papel de la computación en la física 
+moderna. Debido a esto, el principal objetivo del suplemento computacional 
+es la introducción temprana en los cursos de física básica de herramientas 
+computacionales que serán de utilidad a los estudiantes en este curso 
+específico y durante el transcurso de sus carreras científicas.
+
+
+%*************************************************************************
+
+
+
+
+%*************************************************************************
+\section{Instalación de Paquetes}
+\label{sec:install}
+
+
+En la totalidad de esta guía será usado el lenguaje de programación \python
+como referente para todos las prácticas y ejercicios computaciones. La 
+principal motivación de esto es su facilidad de implementación en 
+comparación a otros lenguajes también de amplio en ciencia. Además es un 
+lenguaje interpretado, lo que permite una depuración más sencilla por 
+parte del estudiante, sin necesidad de usar más complicados sistemas de 
+depuración en el caso de lenguajes compilados como C o Fortran. \python es 
+un lenguaje de código abierto, lo que permite la libre distribución del 
+paquete y evita el pago de costosas licencias de uso, además la gran 
+mayoría de paquetes que extienden enormemente la funcionalidad de \python 
+son también código abierto y de libre distribución y uso.
+
+\
+
+A pesar de que \python es un lenguaje multiplataforma, permitiendo correr 
+scripts python en Linux, Windows y Mac, acá solo se indicará el método de 
+instalación para distribuciones Linux basadas en Debian.
+
+\
+
+La última versión de \python de la rama 2 es 2.7.4 y de la rama 3 es la 
+3.3.1, debido a ligeras incompatibilidades entre ambas ramas de desarrollo, 
+será utilizada la rama 2 en una de sus últimas versiones. En orden, para 
+instalar \python en una versión Linux basta con descargarlo directamente 
+de los repositorios oficiales\footnote{En la mayoría de distribuciones Linux
+\python viene precargado por defecto.}, en el caso de una distro basada 
+en Debian el gestor de paquetes es \texttt{apt-get}, y desde una terminal 
+se tiene
+
+
+%.........................................................................
+%Install python
+\begin{listing}[style=consola, numbers=none]
+\$ apt-get install python2.7
+\end{listing}
+%.........................................................................
+
+
+también puede descargarse directamente desde la página oficial del proyecto 
+\url{http://python.org/}.
+
+\
+
+Una vez instalada la última versión de \python, es necesario instalar los
+siguiente paquetes para el correcto desarrollo de las aplicaciones del 
+curso:
+
+
+%-------------------------------------------------------------------------
+%Ipython
+\subsection*{iPython}
+
+\ipython es un shell que permite una interacción más interactiva con los
+scripts de python, permitiendo el resaltado de sintaxis desde consola, 
+funciones de autocompletado y depuración de código más simple. Para su 
+instalación basta descargarlo de los repositorios oficiales 
+
+
+%.........................................................................
+%Install ipython
+\begin{listing}[style=consola, numbers=none]
+\$ apt-get install ipython
+\end{listing}
+%.........................................................................
+
+
+o puede de descargarse de la página oficial \url{http://ipython.org/}. 
+También puede encontrarse documentación completa y actualizada en esta 
+página, se recomienda visitarla frecuentemente para tener las más recientes 
+actualizaciones.
+
+
+%-------------------------------------------------------------------------
+
+
+
+
+%-------------------------------------------------------------------------
+%NumPy
+\subsection*{NumPy}
+
+\numpy es una librería que extiende las funciones matemáticas de \python, 
+permitiendo el manejo de matrices y vectores. Es esencial para la 
+programación científica en \python y puede ser instalada de los repositorios
+
+
+%.........................................................................
+%Install NumPy
+\begin{listing}[style=consola, numbers=none]
+\$ apt-get install python-numpy
+\end{listing}
+%.........................................................................
+
+
+La última versión estable es la 1.6.2. En la página oficial del proyecto 
+puede encontrarse versiones actualizadas y una amplia documentación 
+\url{http://www.numpy.org/}.
+
+%-------------------------------------------------------------------------
+
+
+
+
+%-------------------------------------------------------------------------
+%SciPy
+\subsection*{SciPy}
+
+\scipy es una amplia biblioteca de algoritmos matemáticos para \python, 
+esta incluye herramientas que van desde funciones especiales, integración,
+optimización, procesamiento de señales, análisis de Fourier, etc. Al igual
+que los anteriores paquetes, puede ser instalada desde los repositorios 
+oficiales
+
+
+%.........................................................................
+%Install SciPy
+\begin{listing}[style=consola, numbers=none]
+\$ apt-get install python-scipy
+\end{listing}
+%.........................................................................
+
+
+Una completa documentación del paquete puede ser encontrada en 
+\url{http://docs.scipy.org/doc/scipy/reference/}. La última versión estable
+es la 0.11.0 y puede ser encontrada en la página oficial del proyecto 
+\url{http://www.scipy.org/}.
+
+
+%-------------------------------------------------------------------------
+
+
+
+
+%-------------------------------------------------------------------------
+%Matplotlib
+\subsection*{Matplotlib}
+
+\matplotlib es una completa librería con rutinas para la generación de 
+gráficos a partir de datos. Aunque en su estado actual está enfocada 
+principalmente a gráficos 2D, permite un amplio control sobre el formato 
+de las gráficas generadas, dando una amplia versatilidad a los usuarios.
+Su instalación puede realizarse a partir de los repositorios oficiales
+
+
+%.........................................................................
+%Install Matplotlib
+\begin{listing}[style=consola, numbers=none]
+\$ apt-get install python-matplotlib
+\end{listing}
+%.........................................................................
+
+
+La última versión estable es la 1.2.1. y puede encontrarse en la página 
+oficial del proyecto \url{http://matplotlib.org/}. Una amplia documentación
+está disponible en \url{http://matplotlib.org/1.2.0/contents.html}.
+
+
+%-------------------------------------------------------------------------
+
+
+
+%-------------------------------------------------------------------------
+%Mayavi
+\subsection*{MayaVi2}
+
+\mayavi es una librería para la visualización científica en python, en 
+especial para gráficos 3D, permitiendo funciones avanzadas como renderizado,
+manejo de texturas, etc. Se encuentra en los repositorios oficiales 
+
+
+%.........................................................................
+%Install mayavi2
+\begin{listing}[style=consola, numbers=none]
+\$ apt-get install mayavi2
+\end{listing}
+%.........................................................................
+
+
+La versión 2 es una versión mejorada de la original, estando más orientada
+a la reutilización de código. Por defecto incluye una interfaz gráfica que
+facilita su manejo. La página oficial del proyecto es 
+\url{http://mayavi.sourceforge.net/}.
+
+%-------------------------------------------------------------------------
+
+
+
+
+
+%-------------------------------------------------------------------------
+%Tkinter
+\subsection*{Tkinter}
+
+\tkinter es una librería para la gestión gráfica de aplicaciones in \python 
+y viene por defecto instalada, aún así puede ser instalada de los 
+repositorios oficiales
+
+
+%.........................................................................
+%Install Tkinter
+\begin{listing}[style=consola, numbers=none]
+\$ apt-get install python-tk
+\end{listing}
+%.........................................................................
+
+
+La página oficial del proyecto es \url{http://wiki.python.org/moin/TkInter}.
+Para el desarrollo de entornos gráficos existen otras llamativas
+alternativas como PyGTK o PyQt, pero debido a la facilidad de uso y a ser
+la librería estándar soportada, \tkinter será usada en este curso.
+
+
+%-------------------------------------------------------------------------
+
+
+%*************************************************************************
