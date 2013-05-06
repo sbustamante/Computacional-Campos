@@ -1,48 +1,56 @@
 #!/usr/bin/env python
 #==========================================================
 # DEMOSTRACION 1
-# Grafica de soluciones aproximadas del pendulo simple
+# Espectrometro de masas
 #==========================================================
+from __future__ import division
 import numpy as np
 import matplotlib.pylab as plt
 
-#Solucion
-def Theta(t):
-    theta = theta0*np.sin( omega0*t + delta )
-    return theta
+#Trayectoria
+def trayectory(x):
+    y = y0 + vy0/vx0*(x - x0) + 0.5*(q/m)*( (x-x0)/vx0 )**2
+    return y
     
-#Gravedad
-g = 9.8
-#Longitud
-l = 1
-#Frecuencia
-omega0 = np.sqrt( g/l )
-#Tiempos
-tiempo = np.arange( 0, 10, 0.1 )
-    
-#SOLUCION 1
-#Amplitud
-theta0 = 0.05
-#Fase
-delta = 0.0
-#Grafica
-plt.plot( tiempo, Theta(tiempo), label='solucion 1' )
+#PARTICULA 1
+#Carga
+q = -1
+#Masa
+m = 1
+#Posicion inicial
+x0 = 0
+y0 = 0
+#Velocidad inicial
+vx0 = 1
+vy0 = 2
+#Valores de X a graficar
+X = np.arange( 0, 10, 0.01 )
+#Trayectoria
+Y = trayectory( X )
+#Grafica de trayectoria
+plt.plot( X, Y, label='particula 1' )
 
-#SOLUCION 2
-#Amplitud
-theta0 = 0.05
-#Fase
-delta = np.pi
-#Grafica
-plt.plot( tiempo, Theta(tiempo), label='solucion 2' )
+#PARTICULA 2
+#Carga
+q = -1
+#Masa
+m = 2
+#Posicion inicial
+x0 = 0
+y0 = 0
+#Velocidad inicial
+vx0 = 1
+vy0 = 2
+#Valores de X a graficar
+X = np.arange( 0, 10, 0.01 )
+#Trayectoria
+Y = trayectory( X )
+#Grafica de trayectoria
+plt.plot( X, Y, label='particula 2' )
 
-#SOLUCION 3
-#Amplitud
-theta0 = 0.1
-#Fase
-delta = 0.0
-#Grafica
-plt.plot( tiempo, Theta(tiempo), label='solucion 3' )
-
+#Limites del eje X
+plt.xlim( (0,10) )
+#Limites del eje Y
+plt.ylim( (0,10) )
 plt.legend()
 plt.show()

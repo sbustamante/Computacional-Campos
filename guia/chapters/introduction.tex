@@ -249,3 +249,139 @@ la librería estándar soportada, \tkinter será usada en este curso.
 
 
 %*************************************************************************
+
+
+
+
+
+%*************************************************************************
+\section{Ejemplo de Uso}
+\label{sec:usage}
+
+
+En esta sección se ilustra un ejemplo sencillo que permite al estudiante 
+identificar la manera estándar de ejecutar códigos en \python, además probar 
+los paquetes instalados.
+
+\
+
+El código de ejemplo permite graficar dos funciones diferentes en una misma
+ventana y además un conjunto de datos aleatorios generados en el eje Y.
+
+
+%ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+%USAGE_01
+\begin{listing}[style=python]
+#!/usr/bin/env python
+#==========================================================
+# EJEMPLO DE USO
+# Grafica de funciones y datos aleatorios
+#==========================================================
+import numpy as np
+import scipy as sp
+import matplotlib.pylab as plt
+
+#Funcion 1
+def Funcion1(x):
+    f1 = np.sin(x)/( np.sqrt(1 + x**2) )
+    return f1
+    
+#Funcion 2
+def Funcion2(x):
+    f2 = 1/(1+x)
+    return f2
+    
+#Valores de x para evaluar
+X = np.linspace( 0, 10, 100 )
+#Evaluacion de funcion 1
+F1 = Funcion1(X)
+#Evaluacion de funcion 2
+F2 = Funcion2(X)
+
+#Grafica funcion 1
+plt.plot( X, F1, label='Funcion 1' )
+#Grafica funcion 2
+plt.plot( X, F2, label='Funcion 2' )
+
+#Datos aleatorios eje Y
+Yrand = sp.random.rand( 100 )
+#Grafica datos aleatorios
+plt.plot( X, Yrand, 'o', label='Datos' )
+
+plt.legend()
+plt.show()
+\end{listing}
+%ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+
+El resultado obtenido es la siguiente gráfica
+
+%.........................................................................
+%Simple Pendulum Exact solution
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.7\textwidth]
+	{./pictures/usage_01.pdf}
+
+	\caption{\small{Resultado del ejemplo anterior, gráfica de dos funciones
+	y datos aleatorios.}}
+	
+	\label{fig:small_pedulum}
+\end{figure}
+%.........................................................................
+
+
+Para obtener el anterior script, el estudiante puede transcribirlo 
+directamente de esta guía o puede descargarlo del repositorio oficial del 
+curso\footnote{Repositorio oficial en 
+\url{https://github.com/sbustamante/Computacional-Campos}} en el link
+\url{https://github.com/sbustamante/Computacional-Campos/raw/master/codigos/usage\_01.py}.
+Una vez obtenido el archivo \texttt{usage\_01.py}, abrir una terminal en la 
+carpeta donde se ha guardado y escribir \texttt{ipython} para abrir el 
+intérprete de \python
+
+
+%.........................................................................
+%Opening iPython
+\begin{listing}[style=consola, numbers=none]
+\$ ipython
+\end{listing}
+%.........................................................................
+
+
+Se debe obtener algo como
+
+
+%.........................................................................
+%iPython
+\begin{listing}[style=consola, numbers=none]
+\$ ipython
+Python 2.6.5 (r265:79063, Apr 16 2010, 13:57:41) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 0.10 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object'. ?object also works, ?? prints more.
+
+In [1]: 
+\end{listing}
+%.........................................................................
+
+
+Finalmente para ejecutar el script, usar el comando \texttt{run} seguido
+del nombre del código en el intérprete de código \python
+
+
+%.........................................................................
+%Runing a script
+\begin{listing}[style=consola, numbers=none]
+In [1]: run usage_01.py
+\end{listing}
+%.........................................................................
+
+
+
+
+%*************************************************************************
