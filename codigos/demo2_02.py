@@ -20,7 +20,7 @@ def Electric( r, rp, q ):
 #Permitividad del vacio
 eps0 = 8.85418e-12
 #Resolucion de graficas
-Nres = 20
+Nres = 25
 #Coordenada X
 Xarray = np.linspace( 0, 10, Nres )
 #Coordenada Y
@@ -48,7 +48,7 @@ for i in xrange(Nres):
 
 #CONSTRUCCION DE CAMPO E Y POTENCIAL PHI, PARTICULA 2
 #Carga electrica
-q2 = -1
+q2 = 1
 #Posicion particula
 rp2 = np.array( [6,6] )
 #Incializacion Potencial Electrico
@@ -78,7 +78,7 @@ for i in xrange(Nres):
 	Ex_tot[i,j], Ey_tot[i,j] = E 
 
 #Grafica de equipotenciales
-plt.contour(X, Y, phi_tot, 50)
+plt.contour(X, Y, phi_tot, 100)
 #Grafica de lineas de campo
 plt.quiver( X, Y, Ey_tot, Ex_tot)
 
