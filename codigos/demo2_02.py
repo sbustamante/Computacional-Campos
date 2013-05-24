@@ -48,7 +48,7 @@ for i in xrange(Nres):
 
 #CONSTRUCCION DE CAMPO E Y POTENCIAL PHI, PARTICULA 2
 #Carga electrica
-q2 = 1
+q2 = -1
 #Posicion particula
 rp2 = np.array( [6,6] )
 #Incializacion Potencial Electrico

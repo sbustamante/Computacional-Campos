@@ -381,7 +381,75 @@ In [1]: run usage_01.py
 \end{listing}
 %.........................................................................
 
+%*************************************************************************
 
+
+
+
+%*************************************************************************
+\section{Consejos de Programación}
+\label{sec:advice}
+
+
+En esta sección se dan algunos consejos útiles a la hora de programar. 
+Estas buenas prácticas ayudan al programador a ser estructurado y tener 
+un método coherente de desarrollar códigos.
+
+
+%.........................................................................
+\begin{itemize}
+\item Asignar nombres a los archivos que sean coherentes con lo que realizan. 
+Por ejemplo si está realizando una rutina que integra la trayectoria de una 
+partícula en un campo eléctrico $\bds E$, un nombre adecuado para el código
+puede ser \texttt{trayectory\_electric\_field.py}. Evite usar nombres poco
+intuitivos y que tengan caracteres extraños, inclusive caracteres tildados 
+como \texttt{í}, \texttt{ó}, \texttt{ñ}, etc. También evite el uso de 
+espacios, si desea separar palabras, use el caracter \texttt{\_}.
+
+\item Una práctica casi obligatoria que debe realizar cualquier programador 
+serio, consiste en comentar su código exhaustivamente. Los lenguajes de 
+programación fueron inventados para facilitar la interacción entre el 
+humano y la computadores, los compiladores e intérpretes de códigos 
+\textit{traducen} este lenguaje a lenguaje binario de máquina. Es por esta 
+razón que cuando se crea un código, se debe pensar en que este sea 
+comprensible, siempre recuerde que la máquina solo requiere código binario.
+
+\
+
+Comente todo lo que usted crea conveniente. Es muy común que por minimizar 
+líneas de código o simplemente por pensar que no es necesario, muchos 
+programadores dejan de comentar su código y semanas más tarde retoman y no 
+entienden que han hecho. La programación en equipo es cada vez más común 
+en ciencia, existiendo grandes proyectos donde una comunidad activa está 
+contribuyendo, comentar el código es indispensable para este tipo de 
+actividades.
+
+\item Use el inglés siempre que pueda, para asignar nombres a sus archivos, 
+para comentar su código, y para datos impresos en pantalla y en archivos de 
+datos. Tenga en cuenta que en disciplinas científicas cualquier labor que 
+sea realizada en inglés tendrá un potencial de impacto mayor que otro si se 
+hace en otro idioma. Su código puede ser útil después a otras personas y 
+esto puede ayudar a que usted sea reconocido en círculos académicos.
+
+\item Comparta su código, para esto puede usar páginas diseñadas para esto
+tales como \url{github.com} o \url{sourceforge.net}. Estas páginas además
+de permitir compartir su código a terceras personas, tiene potentes 
+herramientas de control de versiones (git, svn, etc.) las cuales le ayudan 
+a manejar su código de forma más estructurada, permitiendo el control de 
+las diferentes versiones de un código o un paquete completo y el desarrollo
+entre varias personas.
+
+\item Use software open source, este tipo de software es de libre 
+distribución y uso. Cuando se usan herramientas que necesitan licencia se
+está sujeto al pago de ingentes cantidades de dinero por funcionalidades
+que se pueden encontrar de forma gratuita. Este tipo de herramientas pagas
+limitan aspectos como el poder compartir códigos y resultados, por ejemplo 
+si usted no tiene su licencia al día puede tener problemas a la hora de 
+reportar en un artículo de investigación sus resultados y gráficas obtenidos 
+con estos paquetes.
+
+\end{itemize}
+%.........................................................................
 
 
 %*************************************************************************
