@@ -68,7 +68,7 @@ dirección positiva de y, se obtiene
 \label{eq:x_equation}
 x(t) &=& x_0 + v_{x0}t \\
 \label{eq:y_equation}
-y(t) &=& y_0 + v_{y0}t + \frac{1}{2}\pr{\frac{q}{m}}t^2
+y(t) &=& y_0 + v_{y0}t + \frac{1}{2}\pr{\frac{q}{m}}|\bds E| t^2
 \end{eqnarray}
 %.........................................................................
 donde se ha introducido la posición inicial de la partícula $\bds r(t=0) = 
@@ -84,7 +84,7 @@ trayectoria
 %Trayectory
 \eq{eq:trayectory}
 {y(x) = y_0 + \frac{v_{y0}}{v_{x0}}(x - x_0) + 
-\frac{1}{2}\pr{\frac{q}{m}} \pr{ \frac{x - x_0}{v_{x0}} }^2}
+\frac{1}{2}\pr{\frac{q}{m}}| \bds E | \pr{ \frac{x - x_0}{v_{x0}} }^2}
 %.........................................................................
 
 \
@@ -101,6 +101,7 @@ tiene una intensidad de $|\bds E| = 1 \mbox{ N/C}$.
 %DEMO 2_01
 \begin{listing}[style=python]
 #!/usr/bin/env python
+#!/usr/bin/env python
 #==========================================================
 # DEMOSTRACION 1
 # Espectrometro de masas
@@ -111,8 +112,11 @@ import matplotlib.pylab as plt
 
 #Trayectoria
 def trayectory(x):
-    y = y0 + vy0/vx0*(x - x0) + 0.5*(q/m)*( (x-x0)/vx0 )**2
+    y = y0 + vy0/vx0*(x - x0) + 0.5*(q/m)*E*( (x-x0)/vx0 )**2
     return y
+    
+#Campo electrico
+E = 1
     
 #PARTICULA 1
 #Carga
@@ -126,7 +130,7 @@ y0 = 0
 vx0 = 1
 vy0 = 2
 #Valores de X a graficar
-X = np.arange( 0, 10, 0.01 )
+X = np.arange( 0, 10, 0.1 )
 #Trayectoria
 Y = trayectory( X )
 #Grafica de trayectoria
@@ -144,7 +148,7 @@ y0 = 0
 vx0 = 1
 vy0 = 2
 #Valores de X a graficar
-X = np.arange( 0, 10, 0.01 )
+X = np.arange( 0, 10, 0.1 )
 #Trayectoria
 Y = trayectory( X )
 #Grafica de trayectoria
@@ -167,7 +171,7 @@ El resultado que se obtiene es
 %Trayectories
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.8\textwidth]
+	\includegraphics[width=0.6\textwidth]
 	{./pictures/demo2_01.pdf}
 
 	\caption{\small{Trayectorias según la relación carga masa de las 
@@ -206,7 +210,7 @@ y finalmente se carga la librería \matplotlib con el alias de \texttt{plt}.
 \begin{listing}[style=python, numbers = none]
 #Trayectoria
 def trayectory(x):
-    y = y0 + vy0/vx0*(x - x0) + 0.5*(q/m)*( (x-x0)/vx0 )**2
+    y = y0 + vy0/vx0*(x - x0) + 0.5*(q/m)*E*( (x-x0)/vx0 )**2
     return y
 \end{listing}
 %ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
@@ -1267,7 +1271,8 @@ El resultado obtenido está ilustrado en la siguiente figura
 %Electrostatic biliard trayectories
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.75\textwidth]
+	\includegraphics[width=0.75
+	\textwidth]
 	{./pictures/billiards_animated.png}
 
 	\caption{\small{Animación 3D del sistema de billar electrostático 
@@ -1419,4 +1424,121 @@ péndulos, en este caso \texttt{anim}.
 
 
 \rule{14cm}{0.5mm}
+%*************************************************************************
+
+
+
+%*************************************************************************
+\section{Ejercicios}
+\label{sec:ejercicios}
+
+\subsection*{Ejercicio 1 \large{$\pr{\star}$}}
+
+\textbf{Determinación de relación carga masa}
+
+Considere de nuevo el espectrómetro de masas de la demostración  
+\ref{sec:DEMO2_01}. Usando un estroboscopio se midió la posición de una 
+partícula cargada en un campo eléctrico $\bds E = 1$ N/C$\bds j$ y se 
+obtuvieron los siguientes datos 
+\url{https://raw.github.com/sbustamante/Computacional-Campos/master/codigos/datos.txt}.
+
+\
+
+Teniendo en cuenta que la partícula se lanza desde el origen y que la rapidez 
+de lanzamiento inicial en la dirección x fue de $v_{x0} = 1$ m/s, realice un 
+programa que realice los siguiente numerales:
+
+\begin{itemize}
+\item[\textbf{a)}] Calcule, usando la ecuación de trayectoria 
+\ref{eq:trayectory} y un ajuste por $\chi^2$ de los datos, la relación carga
+masa de la partícula.
+\item[\textbf{b)}] Grafique en una misma ventana la trayectoria correspondiente
+a la relación carga masa que encontró, y los datos de la trayectoria (grafique 
+los datos con puntos y no con una línea continua).
+\end{itemize}
+
+\
+
+\subsection*{Ejercicio 2 \large{$\pr{\star}$}}
+
+\textbf{Trayectoria en campo no homogéneo}
+
+Considere una partícula de masa $m$ y carga $q$ embebida en un campo 
+eléctrico con la siguiente forma funcional.
+
+\[ \bds E(x, y) = A(x^2+y^2)\bds i + B\sin(x^2-y^2)\bds j \]
+
+Haga un código que utilice la rutina de integración \texttt{RungeKutta4.py} 
+de la demostración \ref{sec:DEMO2_03} para integrar la trayectoria de esta 
+partícula en el campo $\bds E$. Puede guiarse de la demostración 
+\ref{sec:DEMO2_03}, además puede usar valores numéricos de las condiciones 
+iniciales, constantes $A$ y $B$ y masa $m$ y carga $q$ de su elección.
+Finalmente, usando la función \texttt{quiver} de \matplotlib, grafique 
+las líneas de campo\footnote{Recuerde que para graficar líneas de campo
+debe normalizar el campo tal como $\bds E/|\bds E|$. Para más información,
+remítase a la demostración \ref{sec:DEMO2_02}.}. Grafique también en la 
+misma ventana la trayectoria calculada de la partícula cargada.
+
+
+\textbf{BONUS \large{$\pr{\star}$}}
+
+Este ejercicio puede ser considerado de dos estrellas si se realiza lo 
+siguiente. 
+
+Al final del código anterior, guarde en un archivo externo 
+\texttt{.txt} los datos de la trayectoria integrada con el formato 
+\texttt{[tiempo, coordenada x, coordenada y]}. Luego haga otro código
+que, usando la librería \mayavi, realice una animación 3D de la 
+trayectoria, cargando previamente los datos almacenados (use la función
+\texttt{loadtxt} de la librería \numpy). \textit{Hint:} En la ventana de 
+animación, es conveniente crear una mesa con el fin de tener un 
+punto de referencia para notar el movimiento de la partícula.
+
+\
+
+\subsection*{Ejercicio 3 \large{$\pr{\star}$}}
+
+\textbf{Billar electrostático con campo eléctrico}
+
+
+Considere la demostración \ref{sec:DEMO2_03}. Modifique ambos scripts para
+incluir la acción de un campo eléctrico uniforme y homogéneo sobre las bolas
+cargadas, además agregue otra bola al problema. La dirección y magnitud del 
+campo eléctrico, y las condiciones iniciales de la cuarta bola son de libre
+elección.
+
+\
+
+\subsection*{Ejercicio 4 \large{$\pr{\star}$}}
+
+\textbf{Líneas de potencial de una barra finita}
+
+
+Considere una barra finita de carga $Q$ y longitud $L$, de tal forma que
+la densidad lineal de carga está dada por $\sigma = Q/L$. Un método 
+computacional muy popular para solucionar problemas de distribuciones 
+continuas consiste en reducir el problema a un conjunto de cargas puntuales
+con una distribución \textit{equivalente}.
+
+%.........................................................................
+%Charged bar
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.75
+	\textwidth]
+	{./pictures/bar.png}
+
+	\caption{\small{Potencial de una barra finita cargada.}}
+	
+	\label{fig:bar_Q}
+\end{figure}
+%.........................................................................
+
+Realice un código que calcule las líneas de equipotencial de una distribución
+de 16 partículas cargadas con carga $q = Q/16$ separadas una distancia $l=L/16$
+entre ellas. Para esto puede guiarse de la demostración \ref{sec:DEMO2_02}.
+¿La estructura del potencial es similar a lo que espera del potencial de la 
+barra? Tome los valores numéricos de $Q$ y $L$ como desee.
+
+
 %*************************************************************************
