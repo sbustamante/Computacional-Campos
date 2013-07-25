@@ -5,7 +5,7 @@
 # electrostaticos. Animacion 3D
 #==========================================================
 import numpy as np
-import enthought.tvtk.tools.visual as visual
+import tvtk.tools.visual as visual
 
 #Cargando datos de las bolas
 tiempo, x1_t, y1_t, x2_t, y2_t, x3_t, y3_t = \
@@ -77,6 +77,6 @@ def anim():
     bola3.t = bola3.t + bola3.dt
     i = bola3.t
     bola3.pos = visual.vector( x3_t[i], y3_t[i], r3 )
-    
+
 a = visual.iterate(10, anim)
 visual.show()

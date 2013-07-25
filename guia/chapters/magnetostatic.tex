@@ -1,0 +1,100 @@
+%#########################################################################
+\chapter{Magnetostática}
+\label{cha:magnetostatic}
+
+%#########################################################################
+
+
+%*************************************************************************
+\section{Ejercicios}
+\label{sec:ejercicios}
+
+\
+\subsection*{Ejercicio 1 \large{$\pr{\star}$}}
+
+\textbf{Trayectoria en campo no homogéneo}
+
+Considere una partícula de masa $m$ y carga $q$ embebida en un campo 
+magnético con la siguiente forma funcional.
+
+\[ \bds B(x, y) = A(x^2+y^2)\bds k \]
+
+Haga un código que utilice la rutina de integración \texttt{RungeKutta4.py} 
+de la demostración \ref{sec:DEMO2_03} para integrar la trayectoria de esta 
+partícula en el campo $\bds B$. Puede guiarse de la demostración 
+\ref{sec:DEMO2_03}, además puede usar valores numéricos de las condiciones 
+iniciales, constante $A$, masa $m$ y carga $q$ de su elección.
+Finalmente grafique la trayectoria calculada de la partícula cargada y 
+realice una animación 3D de la partícula usando la libreria \mayavi.
+
+\textit{Hint:} En la ventana de animación, es conveniente crear una mesa 
+con el fin de tener un punto de referencia para notar el movimiento de la 
+partícula.
+
+\
+
+\subsection*{Ejercicio 2 \large{$\pr{\star}$}}
+
+\textbf{Billar electrostático con campo magnético}
+
+
+Considere la demostración \ref{sec:DEMO2_03}. Modifique ambos scripts para
+incluir la acción de un campo magnético uniforme y homogéneo que entra hacia
+el tablero. La magnitud del campo magnético es de libre elección.
+
+
+\subsection*{Ejercicio 3 \large{$\pr{\star}$}}
+
+\textbf{Campo magnético de 4 corrientes}
+
+Considere cuatro alambres por los cuales circula una corriente $I_0$, tal
+como se muestra en la siguiente figura. Usando la función \texttt{quiver}
+de \matplotlib, graficar las líneas de campo magnético en un plano 
+perpendicular a las corrientes. Escoja los valores que desee para las 
+cantidades del problema.
+
+%.........................................................................
+%Charged bar
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.4
+	\textwidth]
+	{./pictures/fourcorrients.png}
+
+	\caption{\small{Cuatro corrientes de igual magnitud.}}
+	
+	\label{fig:fourcorrients}
+\end{figure}
+%.........................................................................
+
+
+\subsection*{Ejercicio 4 \large{$\pr{\star \star}$}}
+
+\textbf{Partícula en un campo dipolar}
+
+Considere una particula cargada en un campo magnetico dipolar, integre 
+numéricamente usando la rutina de integración \texttt{RungeKutta4.py} la 
+trayectoria de la partícula. Realice los siguiente numerales
+
+\
+\begin{itemize}
+\item [\textbf{a)}] Grafique usando la función \texttt{quiver} de \matplotlib las 
+líneas de campo magnético.
+\item [\textbf{b)}] Encuentre una condición inicial (velocidad y posición) para
+la cual la partícula interactúe apreciablemente con el campo magnético.
+Una interacción interesante puede ser el confinamiento de la trayectoria en
+zonas cercanas a los polos del dipolo (Este fenómeno explica las auroras 
+boreales). Guarde la trayectoria obtenida en un archivo de texto con el formato
+\texttt{[x, y, z, vx, vy, vz]}.  
+\item[\textbf{c)}] Realice una animación 3D usando \mayavi donde ilustre el 
+movimiento de la partícula cargada.
+
+\textit{Hint:} En la ventana de animación, es conveniente crear un objeto
+con el fin de tener un punto de referencia para notar el movimiento de la 
+partícula. Este objeto puede ser una esfera en el centro del campo dipolar.
+
+\end{itemize}
+
+Escoja los valores que desee para las cantidades físicas del problema.
+
+%*************************************************************************

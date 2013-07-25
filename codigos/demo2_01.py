@@ -9,8 +9,11 @@ import matplotlib.pylab as plt
 
 #Trayectoria
 def trayectory(x):
-    y = y0 + vy0/vx0*(x - x0) + 0.5*(q/m)*( (x-x0)/vx0 )**2
+    y = y0 + vy0/vx0*(x - x0) + 0.5*(q/m)*E*( (x-x0)/vx0 )**2
     return y
+    
+#Campo electrico
+E = 1
     
 #PARTICULA 1
 #Carga
@@ -24,7 +27,7 @@ y0 = 0
 vx0 = 1
 vy0 = 2
 #Valores de X a graficar
-X = np.arange( 0, 10, 0.01 )
+X = np.arange( 0, 10, 0.1 )
 #Trayectoria
 Y = trayectory( X )
 #Grafica de trayectoria
@@ -42,7 +45,7 @@ y0 = 0
 vx0 = 1
 vy0 = 2
 #Valores de X a graficar
-X = np.arange( 0, 10, 0.01 )
+X = np.arange( 0, 10, 0.1 )
 #Trayectoria
 Y = trayectory( X )
 #Grafica de trayectoria
